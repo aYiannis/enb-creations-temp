@@ -1,38 +1,42 @@
-# sv
+# EnB Creations
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+A rustic-themed e-commerce prototype for "E&B Creations" built with SvelteKit, Tailwind CSS v4, and DaisyUI v5.
 
-## Creating a project
+## Tech Stack
 
-If you're seeing this, you've probably already done this step. Congrats!
+-   **Framework:** [SvelteKit](https://kit.svelte.dev/) (Svelte 5 Runes)
+-   **Styling:** [Tailwind CSS v4](https://tailwindcss.com/)
+-   **UI Library:** [DaisyUI v5](https://daisyui.com/)
+-   **Package Manager:** [Bun](https://bun.sh/)
 
-```sh
-# create a new project in the current directory
-npx sv create
+## Features
 
-# create a new project in my-app
-npx sv create my-app
-```
+-   **Custom "Rustic" Theme:** A tailored color palette (Cream, Stone, Terracotta, Sage, Brown) implemented via DaisyUI and Tailwind.
+-   **State Management:** Global cart and notification state using Svelte 5 Runes (`.svelte.ts` singleton).
+-   **Responsive Design:** Fully responsive Navbar, Hero, Shop Grid, and Footer.
+-   **Animations:** Custom fade-in and hover effects.
 
-## Developing
+## Project Setup
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+1.  **Install Dependencies:**
 
-```sh
-npm run dev
+    ```bash
+    bun install
+    ```
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+2.  **Start Development Server:**
 
-## Building
+    ```bash
+    bun run dev
+    ```
 
-To create a production version of your app:
+3.  **Build for Production:**
 
-```sh
-npm run build
-```
+    ```bash
+    bun run build
+    ```
 
-You can preview the production build with `npm run preview`.
+## Roadmap
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+-   [ ] **Backend:** Integrate [Convex](https://www.convex.dev/) for database and real-time updates.
+-   [ ] **Payments:** Integrate [Stripe](https://stripe.com/) for checkout processing.
