@@ -3,7 +3,7 @@
   import Hero from '$lib/components/Hero.svelte';
   import ProductCard from '$lib/components/ProductCard.svelte';
   import Footer from '$lib/components/Footer.svelte';
-  import type { Product } from '$lib/stores/cart.svelte';
+  import type { Product } from '$lib/state/cart.svelte';
 
   const products: Product[] = [
     {

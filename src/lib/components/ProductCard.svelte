@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { cart, type Product } from '$lib/stores/cart.svelte';
+  import { cartState, type Product } from '$lib/state/cart.svelte';
   
   let { product }: { product: Product } = $props();
 </script>
@@ -9,7 +9,7 @@
         <img src={product.image} alt={product.name} class="w-full h-full object-cover group-hover:scale-110 transition duration-700" />
         <!-- Quick Add Overlay -->
         <div class="absolute inset-x-0 bottom-0 p-4 translate-y-full group-hover:translate-y-0 transition duration-500 bg-white/90 backdrop-blur-sm">
-            <button class="w-full bg-rustic-brown text-white py-3 text-sm tracking-wider font-semibold hover:bg-rustic-terracotta transition" onclick={() => cart.add(product)}>ΠΡΟΣΘΗΚΗ</button>
+            <button class="w-full bg-rustic-brown text-white py-3 text-sm tracking-wider font-semibold hover:bg-rustic-terracotta transition" onclick={() => cartState.add(product)}>ΠΡΟΣΘΗΚΗ</button>
         </div>
     </div>
     <div class="p-6 text-center">

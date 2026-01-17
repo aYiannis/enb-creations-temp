@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { cart } from '$lib/stores/cart.svelte';
+  import { cartState } from '$lib/state/cart.svelte';
   
   let menuOpen = $state(false);
 
@@ -23,12 +23,23 @@
             <a href="#contact" class="hover:text-rustic-terracotta transition duration-300">ΕΠΙΚΟΙΝΩΝΙΑ</a>
             
             <!-- Cart Icon -->
-            <button class="relative group p-2" aria-label="Shopping Cart">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-rustic-brown group-hover:text-rustic-terracotta transition duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
-                </svg>
-                <span class="absolute top-0 right-0 bg-rustic-terracotta text-white text-[10px] rounded-full h-4 w-4 flex items-center justify-center font-bold">{cart.count}</span>
-            </button>
+            <div class="dropdown dropdown-end">
+                <div tabindex="0" role="button" class="relative group p-2" aria-label="Shopping Cart">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-rustic-brown group-hover:text-rustic-terracotta transition duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                    </svg>
+                    <span class="absolute top-0 right-0 bg-rustic-terracotta text-white text-[10px] rounded-full h-4 w-4 flex items-center justify-center font-bold">{cartState.count}</span>
+                </div>
+                <div tabindex="0" role="menu" class="mt-3 z-[1] card card-compact dropdown-content w-52 bg-white shadow-xl border border-stone-100">
+                    <div class="card-body">
+                        <span class="font-bold text-lg text-stone-700">{cartState.count} Αντικείμενα</span>
+                        <span class="text-secondary">Σύνολο: €{cartState.total.toFixed(2)}</span>
+                        <div class="card-actions">
+                            <a href="/checkout" class="btn btn-primary btn-block text-white">Ταμείο</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <!-- Mobile Menu Button -->
