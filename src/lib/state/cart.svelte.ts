@@ -1,9 +1,4 @@
-export type Product = {
-	id: string;
-	name: string;
-	price: number;
-	image: string;
-};
+import type { Product } from '$lib/data/products';
 
 class CartState {
 	items = $state<Product[]>([]);
