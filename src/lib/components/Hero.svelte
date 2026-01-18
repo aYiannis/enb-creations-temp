@@ -7,7 +7,7 @@
     <!-- Content -->
     <div class="relative z-10 text-center px-4 animate-fade-in-up">
         <span class="block text-rustic-cream text-sm md:text-base tracking-[0.2em] mb-4 font-bold">ΙΔΡΥΘΗΚΕ ΤΟ 2023</span>
-        <h1 class="font-serif text-5xl md:text-7xl text-white font-bold mb-6 drop-shadow-md leading-tight">
+        <h1 class="font-serif text-3xl sm:text-4xl md:text-7xl text-white font-bold mb-6 drop-shadow-md leading-tight">
             Χειροποίητα με<br><span class="italic font-light">Αγάπη & Φροντίδα</span>
         </h1>
         <p class="text-stone-100 text-lg md:text-xl mb-10 font-light max-w-xl mx-auto drop-shadow">
