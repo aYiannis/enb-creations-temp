@@ -13,10 +13,61 @@
     phone: ''
   });
 
-  function handleCheckout(e: SubmitEvent) {
+  async function handleCheckout(e: SubmitEvent) {
     e.preventDefault();
-    alert('Η παραγγελία σας καταχωρήθηκε (προσομοίωση). Ευχαριστούμε!');
-    cartState.clear();
+    
+    // Aggregate items by ID
+    const itemsMap = new Map<string, { inventoryId: string, quantity: number, priceAtPurchase: number, itemName: string }>();
+    
+    for (const item of cartState.items) {
+        if (itemsMap.has(item.id)) {
+            itemsMap.get(item.id)!.quantity++;
+        } else {
+            itemsMap.set(item.id, {
+                inventoryId: item.id,
+                quantity: 1,
+                priceAtPurchase: item.price,
+                itemName: item.name
+            });
+        }
+    }
+    
+    const orderItems = Array.from(itemsMap.values());
+
+    const customerInfo = {
+        name: `${shippingInfo.firstName} ${shippingInfo.lastName}`.trim(),
+        email: shippingInfo.email,
+        phone: shippingInfo.phone,
+        address: shippingInfo.address,
+        city: shippingInfo.city,
+        postalCode: shippingInfo.zipCode
+    };
+
+    try {
+        const response = await fetch('/api/order', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                customerInfo,
+                items: orderItems,
+                totalAmount: cartState.total
+            })
+        });
+
+        const result = await response.json();
+
+        if (response.ok && result.success) {
+            alert('Η παραγγελία σας καταχωρήθηκε επιτυχώς! Σας ευχαριστούμε.');
+            cartState.clear();
+            window.location.href = '/';
+        } else {
+            console.error('Order failed:', result);
+            alert('Παρουσιάστηκε πρόβλημα κατά την καταχώρηση της παραγγελίας. Παρακαλούμε δοκιμάστε ξανά.');
+        }
+    } catch (err) {
+        console.error('Checkout error:', err);
+        alert('Σφάλμα επικοινωνίας. Παρακαλούμε ελέγξτε τη σύνδεσή σας.');
+    }
   }
 </script>
 

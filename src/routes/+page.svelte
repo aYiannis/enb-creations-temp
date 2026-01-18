@@ -3,7 +3,9 @@
 	import Hero from '$lib/components/Hero.svelte';
 	import ProductCard from '$lib/components/ProductCard.svelte';
 	import Footer from '$lib/components/Footer.svelte';
-	import { products } from '$lib/data/products';
+    import type { PageData } from './$types';
+
+    let { data }: { data: PageData } = $props();
 </script>
 
 <Navbar />
@@ -69,7 +71,7 @@
 		</div>
 
 		<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-			{#each products as product}
+			{#each data.products as product}
 				<ProductCard {product} />
 			{/each}
 		</div>
