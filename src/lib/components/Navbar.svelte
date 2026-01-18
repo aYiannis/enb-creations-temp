@@ -28,12 +28,12 @@
     <div class="container mx-auto px-6 py-4 flex justify-between items-center">
         
         <!-- Logo -->
-        <a href="/" class="font-serif text-2xl font-bold tracking-wide text-rustic-brown hover:text-rustic-terracotta transition duration-300 group">
-            E&B Creations <span class="text-sm font-sans font-normal text-stone-500 group-hover:text-rustic-terracotta/70 transition">| Χειροποίητα</span>
+        <a href="/" class="flex items-center gap-2 font-serif text-xl md:text-2xl font-bold tracking-wide text-rustic-brown hover:text-rustic-terracotta transition duration-300 group uppercase">
+            E&B CREATIONS <span class="text-[10px] md:text-sm font-sans font-normal text-stone-500 group-hover:text-rustic-terracotta/70 transition uppercase">| ΧΕΙΡΟΠΟΙΗΤΑ</span>
         </a>
 
         <!-- Desktop Menu Links -->
-        <div class="hidden md:flex items-center space-x-8 text-sm font-semibold tracking-wide text-stone-600">
+        <div class="hidden md:flex items-center md:space-x-4 lg:space-x-8 text-sm font-semibold tracking-wide text-stone-600">
             <a href="#shop" class="hover:text-rustic-terracotta transition duration-300">ΚΑΤΑΣΤΗΜΑ</a>
             <a href="#about" class="hover:text-rustic-terracotta transition duration-300">Η ΙΣΤΟΡΙΑ ΜΑΣ</a>
             <a href="#contact" class="hover:text-rustic-terracotta transition duration-300">ΕΠΙΚΟΙΝΩΝΙΑ</a>

@@ -12,7 +12,7 @@
 	>
 		<!-- Brand -->
 		<div>
-			<h3 class="font-serif text-3xl text-white mb-6">E&B Creations</h3>
+			<h3 class="font-serif text-3xl text-white mb-6 uppercase tracking-wide">E&B CREATIONS</h3>
 			<p class="text-stone-400 mb-6">
 				Χειροποίητα αγαθά περιορισμένης παραγωγής. Φτιαγμένα με πρόθεση για τον τρόπο ζωής σας.
 			</p>
@@ -56,6 +56,6 @@
 	<div
 		class="container mx-auto px-6 pt-8 mt-8 border-t border-stone-800 text-center text-xs text-stone-500"
 	>
-		&copy; 2026 E&B Creations. Με επιφύλαξη παντός δικαιώματος.
+		&copy; 2026 E&B CREATIONS. Με επιφύλαξη παντός δικαιώματος.
 	</div>
 </footer>
