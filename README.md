@@ -13,6 +13,7 @@ A rustic-themed e-commerce prototype for "E&B Creations" built with SvelteKit, T
 
 -   **Custom "Rustic" Theme:** A tailored color palette (Cream, Stone, Terracotta, Sage, Brown) implemented via DaisyUI and Tailwind.
 -   **State Management:** Global cart and notification state using Svelte 5 Runes (`.svelte.ts` singleton).
+-   **Data Model:** Aligned with Convex schema (including `quantity` tracking).
 -   **Responsive Design:** Fully responsive Navbar, Hero, Shop Grid, and Footer.
 -   **Animations:** Custom fade-in and hover effects.
 
